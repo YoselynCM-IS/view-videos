@@ -8,7 +8,7 @@ class VideoController extends Controller
 {
     // Mostrar video
     public function show($slug){
-        $video = Video::whereSlug($slug)->first();
+        $video = Video::whereSlug($slug)->with('others')->first();
         return view('video', compact('video'));
     }
 }
