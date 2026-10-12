@@ -11,4 +11,10 @@ class VideoController extends Controller
         $video = Video::whereSlug($slug)->with('others')->first();
         return view('video', compact('video'));
     }
+
+
+    // Mostrar cortinilla
+    public function info_curtain(){
+        return view('small-curtain');
+    }
 }

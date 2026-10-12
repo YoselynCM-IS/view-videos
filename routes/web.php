@@ -15,4 +15,5 @@ Use App\Http\Controllers\VideoController;
 */
 
 Route::get('video/{slug}', [VideoController::class, 'show'])->name('video');
+Route::get('info-curtain', [VideoController::class, 'info_curtain'])->name('info-curtain');
 
