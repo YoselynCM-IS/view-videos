@@ -82,9 +82,9 @@
         </style>
     </head>
     <body class="antialiased">
-        <div class="selector-container">
-            <p>{{ $video->titulo }}</p>
-            @if($video->several)
+        @if($video->several)
+            <div class="selector-container">
+                <p>{{ $video->titulo }}</p>
                 <select id="videoSelect" onchange="cambiarVideo(this)">
                     @foreach($video->others as $other)
                         <option 
@@ -93,8 +93,8 @@
                         </option>
                     @endforeach
                 </select>
-            @endif
-        </div>
+            </div>
+        @endif
        <div class="div-video">
         <video id="mainVideo" controls>
             <source id="videoSource" src="{{ $video->link }}" type="video/mp4" />
